@@ -14,9 +14,9 @@ with tab1:
     st.write("Analyze team batting statistics by selecting a team and year.")
 
     # get data
-    batting = pd.read_csv('batting.csv')
-    teams = pd.read_csv('teams.csv')
-    players = pd.read_csv('people.csv')
+    batting = pd.read_csv('data/Batting.csv')
+    teams = pd.read_csv('data/Teams.csv')
+    players = pd.read_csv('data/People.csv')
 
     #join batting with players
     batting = batting.merge(players[['playerID', 'nameFirst', 'nameLast']], on='playerID', how='left')
@@ -70,9 +70,9 @@ with tab2:
     st.write("Analyze team pitching statistics by selecting a team and year.")
 
     #get data
-    pitching = pd.read_csv('pitching.csv')
-    teams = pd.read_csv('teams.csv')
-    players = pd.read_csv('people.csv')
+    pitching = pd.read_csv('data/Pitching.csv')
+    teams = pd.read_csv('data/Teams.csv')
+    players = pd.read_csv('data/People.csv')
 
     #merge on playerID
     pitching = pitching.merge(players[['playerID', 'nameFirst', 'nameLast']], on='playerID', how='left')
@@ -123,10 +123,10 @@ with tab3:
     st.header("Player Comparison")
     st.write("Compare career stats of two players")
     #get data
-    players = pd.read_csv('people.csv')
-    teams = pd.read_csv('teams.csv')
-    batting = pd.read_csv('batting.csv')
-    pitching = pd.read_csv('pitching.csv')
+    players = pd.read_csv('data/People.csv')
+    teams = pd.read_csv('data/Teams.csv')
+    batting = pd.read_csv('data/Batting.csv')
+    pitching = pd.read_csv('data/Pitching.csv')
 
     #join batting with players
     batting = batting.merge(players[['playerID', 'nameFirst', 'nameLast']], on='playerID', how='left')
